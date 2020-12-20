@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clock | Demo</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css"
+    />
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        background: #0f3854;
+        background: radial-gradient(ellipse at center, #0a2e38 0%, #000000 70%);
+        background-size: 100%;
+      }
+      p {
+        margin: 0;
+        padding: 0;
+      }
+      #clock {
+        font-family: "Share Tech Mono", monospace;
+        color: #ffffff;
+        text-align: center;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        color: #daf6ff;
+        text-shadow: 0 0 20px rgba(10, 175, 230, 1),
+          0 0 20px rgba(10, 175, 230, 0);
+      }
+        #time {
+         letter-spacing: .1rem;
+          font-size: 100px;
+          padding: 5px 0;
+        }
+        #date {
+          letter-spacing: 0.1rem;
+          font-size: 40px;
+        }
+        .text {
+          letter-spacing: 0.1rem;
+          font-size: 12px;
+          padding: 3rem 0 0;
+        }
+      
+    </style>
+  </head>
+  <body>
+    <div id="clock">
+      <p id="date"></p>
+      <p id="time"></p>
+      <p class="text">DIGITAL CLOCK</p>
+    </div>
+    <script>
+        setInterval(() => {
+          var x = new Date();
+          let date =x.toLocaleDateString();
+          let time = ' '+x.getHours() + ':'+ x.getMinutes()  + ':'+ x.getSeconds();
+          var y = document.getElementById('time').innerHTML= time;
+          var dateToDisplay = document.getElementById('date').innerHTML= date;
+          
+        }, 1000);
+      </script>
+  </body>
+</html>
